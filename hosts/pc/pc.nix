@@ -3,12 +3,6 @@
 		./hardware-configuration.nix
 	];
 
-  # Bootloader
-	boot.loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;	
-	};
-
 	# Storage Optimisation
 	nix.optimise.automatic = true;
 	nix.gc = {
