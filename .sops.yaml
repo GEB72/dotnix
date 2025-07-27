@@ -1,7 +1,11 @@
 keys:
-  - &primary age1x3fp4ma09pr0vxd6jsvsvegyww687qu4f6aap5zdqcalntt4efaq56hzr4
+  - &users:
+    - &jakub age1ysccuapykwfkt9sjkd0sd5qltm4dq2sacfxlxkj6sx7wtfr3z3lql8t300
+  - &hosts:
+    - &pc age1szs3cjcnl2g7mwvhcd4hvtj9mf6fz9nacqqp9m8z25jwr2yrh9lqjwxfam
 creation_rules:
-  - path_regex: secrets/[^/]+\.yaml$
+  - path_regex: secrets/secret.yaml$
     key_groups:
     - age:
-      - *primary
+      - *jakub
+      - *pc

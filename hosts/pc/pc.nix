@@ -8,7 +8,7 @@
 	nix.gc = {
 		automatic = true;
 		dates = "weekly";
-		options = "--delete-generations +5";
+		options = "--delete-generations +10";
 	};
 
   # Graphics Card
