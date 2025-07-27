@@ -10,7 +10,7 @@
 		tree
     wget
 		stow
-    tldr
+		age
     git
 		jq
 
