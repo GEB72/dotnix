@@ -10,6 +10,7 @@
 		tree
     wget
 		stow
+		sops
 		age
     git
 		jq
