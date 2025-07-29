@@ -18,6 +18,16 @@
 					./hosts/pc/pc.nix
 				];
 			};
+
+			laptop = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [
+					sops-nix.nixosModules.sops
+					./users/jakub/user.nix
+					./modules/modules.nix
+					./hosts/laptop/laptop.nix
+				];
+			};
 		};
   };
 }

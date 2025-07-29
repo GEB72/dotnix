@@ -12,7 +12,7 @@
 	# Wireguard
 	networking.wireguard = {
 		# Enable the service
-		enable = false;
+		enable = true;
 
 		# Set wg0 client interface 
 		interfaces = {
@@ -25,8 +25,8 @@
 
 				peers = [{
 						publicKey = "UQ3113obKf6EZuKccgY5sIfD1HplVV0fOS8m5wT/OVQ=";
-						allowedIPs = [ "0.0.0.0/0" ];
-						endpoint = "86.178.57.18:51820";
+						allowedIPs = [ "0.0.0.0/0" "::/0" ];
+						endpoint = "[2a00:23cc:b717:8e01:e1e3:674c:700c:26ee]:51820";
 						persistentKeepalive = 25;
 				}]; 
 			};
