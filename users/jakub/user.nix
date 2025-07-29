@@ -7,6 +7,13 @@
 				neededForUsers = true;
 			};
 
+			"jakub/ssh-key" = {
+				sopsFile = ./../../secrets/users.yaml;
+				path = "home/jakub/.ssh/id_ed25519";
+				owner = config.users.users.jakub.name;
+				inherit (config.users.users.jakub) group;
+			};
+
 			"twilio/account_sid" = {};
 			"twilio/auth_token" = {};
 
@@ -24,6 +31,11 @@
 		hashedPasswordFile = config.sops.secrets."jakub/password".path;
     description = "Jakub Mikulski";
     extraGroups = [ "networkmanager" "wheel" ];
+
+		openssh.authorizedKeys.keys = [
+			(builtins.readFile ./public-keys/id_me.pub)
+		];
+
     packages = with pkgs; [];
   };
 }

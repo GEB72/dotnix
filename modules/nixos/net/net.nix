@@ -10,24 +10,4 @@
   networking.firewall = {
     allowedUDPPorts = [ 51820 ];
   };
-
-  # SSH
-  services.openssh = {
-    enable = true;
-
-    ports = [ 22 ];
-		listenAddresses = [
-	  {
-	    addr = "10.0.0.1";
-	  }
-		];
-
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-      AllowUsers = [ "jakub" ]; 
-      UseDns = true;
-      X11Forwarding = false;
-    };
-  };
 }

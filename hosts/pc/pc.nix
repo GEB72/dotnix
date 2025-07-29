@@ -1,6 +1,7 @@
 { config, ... }: {
 	imports = [
 		./hardware-configuration.nix
+		./wireguard/wireguard.nix
 	];
 
 	# Storage Optimisation
