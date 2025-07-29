@@ -4,7 +4,7 @@ keys:
   - &hosts:
     - &pc age1szs3cjcnl2g7mwvhcd4hvtj9mf6fz9nacqqp9m8z25jwr2yrh9lqjwxfam
 creation_rules:
-  - path_regex: secrets/secret.yaml$
+  - path_regex: secrets/[^/]+\.yaml$
     key_groups:
     - age:
       - *jakub

@@ -5,6 +5,9 @@
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
 
+	# Disable mutable users
+	users.mutableUsers = false;
+
 	# Tiling Manager
 	programs.hyprland.enable = true;
 

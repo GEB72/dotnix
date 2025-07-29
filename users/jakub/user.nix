@@ -1,15 +1,12 @@
 { config, pkgs, ... }: {
-	# Create user
-  users.users.jakub = {
-    isNormalUser = true;
-    description = "Jakub Mikulski";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
 	# Assign secrets
 	sops = {
 		secrets = {
+			"jakub/password" = {
+				sopsFile = ./../../secrets/users.yaml;
+				neededForUsers = true;
+			};
+
 			"twilio/account_sid" = {};
 			"twilio/auth_token" = {};
 
@@ -20,4 +17,13 @@
 			"kms/key_id" = {};
 		};
 	};
+
+	# Create user
+  users.users.jakub = {
+    isNormalUser = true;
+		hashedPasswordFile = config.sops.secrets."jakub/password".path;
+    description = "Jakub Mikulski";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
 }
