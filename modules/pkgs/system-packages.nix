@@ -48,6 +48,7 @@
 		postman
     firefox
 		neovim
+		heroic
     rofi
     yazi
 		mpv

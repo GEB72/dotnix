@@ -12,7 +12,7 @@
 	# Wireguard
 	networking.wireguard = {
 		# Enable the service
-		enable = true;
+		enable = false;
 
 		# Set wg0 client interface 
 		interfaces = {
