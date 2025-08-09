@@ -15,7 +15,8 @@
     git
 		jq
 
-    # Bluetooth
+    # Audio/Bluetooth
+		easyeffects
 		bluez
 
     # Language
