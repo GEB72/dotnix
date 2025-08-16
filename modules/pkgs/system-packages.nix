@@ -11,6 +11,7 @@
     wget
 		stow
 		sops
+		lact
 		age
     git
 		jq
@@ -58,6 +59,7 @@
     wl-clipboard
 		gamescope
 		hyprpaper
+		spotify
 		waybar
     clipse
 		slurp
