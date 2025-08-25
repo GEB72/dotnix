@@ -1,9 +1,10 @@
-{ ... }: {
+{ ... }:
+{
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
 
-  # NAT 
+  # NAT
   networking.nat.enable = true;
   networking.nat.externalInterface = "eth0";
   networking.nat.internalInterfaces = [ "wg0" ];

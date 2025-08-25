@@ -1,68 +1,69 @@
-{ pkgs, ... }: {
-	environment.variables.EDITOR = "nvim --clean";
+{ pkgs, ... }:
+{
+  environment.variables.EDITOR = "nvim --clean";
 
-	environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     # Utils
     pavucontrol
-		ripgrep
-		bottom
-		unzip
-		tree
+    ripgrep
+    bottom
+    unzip
+    tree
     wget
-		stow
-		sops
-		lact
-		age
+    stow
+    sops
+    lact
+    age
     git
-		jq
+    jq
 
     # Audio/Bluetooth
-		easyeffects
-		bluez
+    easyeffects
+    bluez
 
     # Language
-		rustc
-		gcc
-		go
+    rustc
+    gcc
+    go
 
-		# Server
-		wireguard-tools
-		iptables
+    # Server
+    wireguard-tools
+    iptables
 
-    # Terminal 
-		lazygit
+    # Terminal
+    lazygit
     kitty
     zsh
 
-		# LSP
+    # LSP
     lua-language-server
     gopls
     nil
 
-    # Appearance 
+    # Appearance
     zsh-powerlevel10k
     fastfetch
-		wlsunset
-		nwg-look
+    wlsunset
+    nwg-look
 
-		# Apps
-		obsidian
-		postman
+    # Apps
+    obsidian
+    postman
     firefox
-		neovim
-		heroic
+    neovim
+    heroic
     rofi
     yazi
-		mpv
+    mpv
 
-		# Desktop
+    # Desktop
     wl-clipboard
-		gamescope
-		hyprpaper
-		spotify
-		waybar
+    gamescope
+    hyprpaper
+    spotify
+    waybar
     clipse
-		slurp
-		grim
-	];
+    slurp
+    grim
+  ];
 }

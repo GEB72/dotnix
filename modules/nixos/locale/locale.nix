@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Set your time zone.
   time.timeZone = "Europe/London";
 
@@ -23,6 +24,6 @@
     variant = "";
   };
 
-  # Configure Console Keymap 
+  # Configure Console Keymap
   console.keyMap = "uk";
 }
