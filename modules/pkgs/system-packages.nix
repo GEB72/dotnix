@@ -40,9 +40,9 @@
     gopls
     nil
 
-		# Formatters
-		nixfmt
-		nixfmt-tree
+    # Formatters
+    nixfmt
+    nixfmt-tree
 
     # Appearance
     zsh-powerlevel10k
