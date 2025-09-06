@@ -4,7 +4,6 @@
 
   environment.systemPackages = with pkgs; [
     # Utils
-    pavucontrol
     ripgrep
     bottom
     unzip
@@ -18,6 +17,7 @@
     jq
 
     # Audio/Bluetooth
+    pavucontrol
     easyeffects
     bluez
 
@@ -41,8 +41,8 @@
     nil
 
     # Formatters
-    nixfmt
     nixfmt-tree
+    nixfmt
 
     # Appearance
     zsh-powerlevel10k
@@ -58,6 +58,7 @@
     heroic
     rofi
     yazi
+		tmux
     mpv
 
     # Desktop
