@@ -19,6 +19,7 @@
     # Audio/Bluetooth
     pavucontrol
     easyeffects
+		ardour
     bluez
 
     # Language
