@@ -52,6 +52,7 @@
     nwg-look
 
     # Apps
+		atlauncher
     obsidian
     postman
     firefox

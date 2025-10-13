@@ -13,6 +13,9 @@
     options = "--delete-generations +10";
   };
 
+	# Firmware
+	hardware.enableRedistributableFirmware = true;
+
   # Graphics Card
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
