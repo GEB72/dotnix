@@ -47,6 +47,7 @@
 
     # Appearance
     zsh-powerlevel10k
+		oh-my-zsh
     fastfetch
     wlsunset
     nwg-look
