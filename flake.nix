@@ -33,6 +33,7 @@
           system = "x86_64-linux";
           modules = [
             sops-nix.nixosModules.sops
+            home-manager.nixosModules.home-manager
             ./users/jakub/user.nix
             ./modules/modules.nix
             ./hosts/laptop/laptop.nix
