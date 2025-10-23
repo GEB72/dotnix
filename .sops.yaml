@@ -3,9 +3,11 @@ keys:
     - &jakub age1ysccuapykwfkt9sjkd0sd5qltm4dq2sacfxlxkj6sx7wtfr3z3lql8t300
   - &hosts:
     - &pc age1szs3cjcnl2g7mwvhcd4hvtj9mf6fz9nacqqp9m8z25jwr2yrh9lqjwxfam
+    - &laptop age1zf7e9t3d38v04t3msxw3f5hnyxuyngnw0wu07qfl0cmxkwfxwcds73xqj9
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:
     - age:
       - *jakub
       - *pc
+      - *laptop
