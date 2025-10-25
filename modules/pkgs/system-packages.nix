@@ -62,6 +62,7 @@
     rofi
     yazi
 		tmux
+		vial
     mpv
 
     # Desktop

@@ -17,9 +17,16 @@
 
   # Tiling Manager
   programs.hyprland.enable = true;
+	
+	# Vial udev rules
+	services.udev.extraRules = 
+	  "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", " +
+		"ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", " + 
+		"GROUP=\"users\", TAG+=\"uaccess\", TAG+=\"udev-acl\" ";
 
   # zsh
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}" +
+	"/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 }
