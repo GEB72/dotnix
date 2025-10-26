@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Utils
     ripgrep
+		evtest
     bottom
     unzip
     tree

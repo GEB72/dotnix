@@ -8,6 +8,7 @@
     ./nixos/locale/locale.nix
     ./nixos/audio/audio.nix
     ./nixos/gaming/gaming.nix
+    ./nixos/keyboard/keyboard.nix
     ./pkgs/system-packages.nix
   ];
 }
