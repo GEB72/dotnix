@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Utils
     ripgrep
-		evtest
+    evtest
     bottom
     unzip
     tree
@@ -20,7 +20,7 @@
     # Audio/Bluetooth
     pavucontrol
     easyeffects
-		ardour
+    ardour
     bluez
 
     # Language
@@ -48,13 +48,13 @@
 
     # Appearance
     zsh-powerlevel10k
-		oh-my-zsh
+    oh-my-zsh
     fastfetch
     wlsunset
     nwg-look
 
     # Apps
-		atlauncher
+    atlauncher
     obsidian
     postman
     firefox
@@ -62,8 +62,8 @@
     heroic
     rofi
     yazi
-		tmux
-		vial
+    tmux
+    vial
     mpv
 
     # Desktop
