@@ -62,7 +62,6 @@
     heroic
     rofi
     yazi
-    tmux
     vial
     mpv
 
