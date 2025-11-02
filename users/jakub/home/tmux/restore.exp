@@ -1,5 +1,0 @@
-#!/usr/bin/env expect
-
-spawn tmux 
-send "\002\022"
-interact

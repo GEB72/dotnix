@@ -1,7 +1,14 @@
 #!/usr/bin/env expect
 
+# start tmux
 spawn tmux 
-sleep 1
+
+# delay with sleep to compensate for tmux starting time
+sleep 2
+
+# run restore script directly
 send "\002\022"
-sleep 1
-interact
+
+# long wait until tmux restore is complete
+# (things get messed up if expect client isn't attached)
+sleep 100
