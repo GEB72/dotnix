@@ -1,0 +1,7 @@
+#!/usr/bin/env expect
+
+spawn tmux 
+sleep 1
+send "\002\022"
+sleep 1
+interact

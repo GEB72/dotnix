@@ -18,6 +18,9 @@
   # Tiling Manager
   programs.hyprland.enable = true;
 
+  # bash
+  programs.bash.enable = true;
+
   # zsh
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;

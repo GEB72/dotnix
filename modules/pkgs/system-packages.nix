@@ -4,7 +4,9 @@
 
   environment.systemPackages = with pkgs; [
     # Utils
+    moreutils
     ripgrep
+    expect
     evtest
     bottom
     unzip
@@ -35,7 +37,6 @@
     # Terminal
     lazygit
     kitty
-    zsh
 
     # LSP
     lua-language-server
