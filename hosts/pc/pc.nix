@@ -24,6 +24,8 @@
   };
 
   # OC Tool
+  systemd.packages = with pkgs; [ lact ];
+	boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
     after = [ "multi-user.target" ];
