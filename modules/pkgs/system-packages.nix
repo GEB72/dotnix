@@ -9,12 +9,13 @@
     expect
     evtest
     bottom
-    unzip
+		p7zip
     tree
     wget
     stow
     sops
     lact
+		wine
     age
     git
     jq
@@ -68,7 +69,6 @@
 
     # Desktop
     wl-clipboard
-    gamescope
     hyprpaper
     spotify
     waybar

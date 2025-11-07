@@ -20,17 +20,27 @@
   ssl S-IntlBackslash
 )
 
-
 ;; ---- Define Base Layer ----
 (deflayer base
   esc            f1   f2   f3   f4   f5      f6   f7   f8   f9   f10     f11  f12
   XX             1    2    3    4    5       6    7    8    9    0       -    =    bspc
-  tab            q    w    e    r    t       y    u    i    o    p       [    ]    ret 
-  @nav           @a   @s   @d   @f   g       h    @j   @k   @l   @;      '    \ 
-  XX     XX      z    x    c    v    b       n    m    ,    .    /       XX
-  lctl   lmet    lalt      spc                    ralt lrld
+  XX             @q   w    e    r    t       y    u    i    o    p       [    ]    ret 
+  @caps          @a   @s   @d   @f   g       h    @j   @k   @l   @;      @'   \ 
+  lsft    XX     z    x    c    @v   b       n    @m   ,    .    /       XX
+  lctl   lmet    lalt      spc                    @src lrld
 ) 
+(defalias bse (layer-switch base))
 
+;; ---- Add Source as Layer for Toggle ----
+(deflayer source
+  esc            f1   f2   f3   f4   f5      f6   f7   f8   f9   f10     f11  f12
+  IntlBackslash  1    2    3    4    5       6    7    8    9    0       -    =    bspc
+  tab            q    w    e    r    t       y    u    i    o    p       [    ]    ret 
+  caps           a    s    d    f    g       h    j    k    l    ;       '    \ 
+  lsft   `       z    x    c    v    b       n    m    ,    .    /       rsft
+  lctl   lmet    lalt      spc                    @bse rctl
+) 
+(defalias src (layer-switch source))
 
 ;; ---- Define Number Layer ----
 (deflayer number-layer
@@ -68,29 +78,19 @@
 
 ;; ---- Chords ----
 (defvar
-  chord-timeout 30
+  chord-timeout 40
   chord-timeout-slow 60
 )
 (defchordsv2
-  (a s) tab $chord-timeout-slow first-release ()
-  (l ;) tab $chord-timeout-slow first-release ()
+  (s d) bspc $chord-timeout-slow first-release (source)
+  (k l) bspc $chord-timeout-slow first-release (source)
 
-  (s d) bspc $chord-timeout-slow first-release ()
-  (k l) bspc $chord-timeout-slow first-release ()
-
-  (d f) ret $chord-timeout first-release ()
-  (j k) ret $chord-timeout first-release ()
-
-  (i o) @sym $chord-timeout-slow first-release ()
-  (w e) @sym $chord-timeout-slow first-release ()
-
-  (, .) @num $chord-timeout-slow first-release ()
-
-  (q w) esc $chord-timeout-slow first-release ()
+  (d f) ret $chord-timeout first-release (source)
+  (j k) ret $chord-timeout first-release (source)
 )
 
 
-;; ---- Home Row Mods ----
+;; ---- Home Row Mods + Tap Dance ----
 (defvar
   tap-time 220
   tap-time-slow 270
@@ -98,7 +98,10 @@
   hold-time-slow 270
 )
 (defalias
-  a (tap-hold $tap-time-slow $hold-time-slow a lmet)
+  caps (tap-dance $tap-time (@nav tab))
+  q (tap-dance $tap-time (q esc))
+
+  a (tap-hold $tap-time-slow $hold-time-slow a lmet)      
   s (tap-hold $tap-time-slow $hold-time-slow s lalt)
   d (tap-hold $tap-time $hold-time d lctl)
   f (tap-hold $tap-time $hold-time f lsft)
@@ -106,5 +109,10 @@
   j (tap-hold $tap-time $hold-time j lsft)
   k (tap-hold $tap-time $hold-time k lctl)
   l (tap-hold $tap-time-slow $hold-time-slow l lalt)
-  ; (tap-hold $tap-time-slow $hold-time-slow ; lmet)
+  ; (tap-hold $tap-time-slow $hold-time-slow ; lmet)      
+
+  v (tap-hold $tap-time $hold-time v @sym)
+  m (tap-hold $tap-time $hold-time m @sym)
+
+  ' (tap-hold $tap-time $hold-time ' @num)
 )
