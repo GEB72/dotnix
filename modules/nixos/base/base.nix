@@ -19,8 +19,8 @@
   programs.hyprland.enable = true;
 
   # Plasma 6 for gaming
-	services.desktopManager.plasma6.enable = true;
-	services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # bash
   programs.bash.enable = true;

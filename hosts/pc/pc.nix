@@ -20,12 +20,12 @@
   services.xserver.videoDrivers = [ "amd" ];
   hardware.graphics = {
     enable = true;
-		enable32Bit = true;
+    enable32Bit = true;
   };
 
   # OC Tool
   systemd.packages = with pkgs; [ lact ];
-	boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
+  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
     after = [ "multi-user.target" ];

@@ -29,13 +29,13 @@
   };
 
   home.file.".tmux/plugins".source = pkgs.buildEnv {
-	  name = "tmux-plugins";
-		paths = with pkgs.tmuxPlugins; [
-		  resurrect
-			continuum
-		];
-		pathsToLink = [ "/share" ];
-	};
+    name = "tmux-plugins";
+    paths = with pkgs.tmuxPlugins; [
+      resurrect
+      continuum
+    ];
+    pathsToLink = [ "/share" ];
+  };
 
   # Import global tmux config
   imports = [ ../../../../modules/home/tmux/tmux.nix ];

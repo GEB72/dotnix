@@ -9,13 +9,13 @@
     expect
     evtest
     bottom
-		p7zip
+    p7zip
     tree
     wget
     stow
     sops
     lact
-		wine
+    wine
     age
     git
     jq
@@ -62,6 +62,7 @@
     firefox
     neovim
     heroic
+    tidal-hifi
     rofi
     yazi
     vial
@@ -70,7 +71,6 @@
     # Desktop
     wl-clipboard
     hyprpaper
-    spotify
     waybar
     clipse
     slurp
