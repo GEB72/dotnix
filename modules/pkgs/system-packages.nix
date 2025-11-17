@@ -58,11 +58,11 @@
     # Apps
     atlauncher
     obsidian
+		spotify
     postman
     firefox
     neovim
     heroic
-    tidal-hifi
     rofi
     yazi
     vial

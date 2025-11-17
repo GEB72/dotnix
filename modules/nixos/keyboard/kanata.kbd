@@ -1,7 +1,7 @@
 ;; --- Define Global Config ---
 (defcfg 
-  linux-dev /dev/input/by-id/usb-ASUSTeK_ROG_OMNI_RECEIVER-event-kbd
-  process-unmapped-keys no 
+  linux-dev /dev/keyboard
+	process-unmapped-keys no 
   concurrent-tap-hold yes
 )
 
@@ -62,9 +62,7 @@
   XX             S-1  -    S-=  =    \       S-`   S-;  S-9  S-0  S-'     XX   XX
   XX     XX      S-6  /    S-8  @bsl S-\     `     S-4  [    ]    S-/     XX
   lctl   lmet    lalt      spc                     ralt lrld
-)
-(defalias sym (layer-while-held symbol-layer))
-
+) (defalias sym (layer-while-held symbol-layer))
 
 ;; ---- Navigation Layer Map ----
 (deflayermap nav-layer
