@@ -8,4 +8,7 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  # Disable SMT
+  security.allowSimultaneousMultithreading = false;
 }

@@ -5,6 +5,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    musnix.url = "github:musnix/musnix";
   };
 
   outputs =
@@ -13,6 +14,7 @@
       nixpkgs,
       sops-nix,
       home-manager,
+      musnix,
     }:
     {
 
@@ -26,6 +28,7 @@
           modules = [
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
+            musnix.nixosModules.musnix
             ./users/jakub/user.nix
             ./modules/modules.nix
             ./hosts/pc/pc.nix

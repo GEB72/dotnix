@@ -34,6 +34,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
 
     openssh.authorizedKeys.keys = [

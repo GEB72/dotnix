@@ -58,7 +58,7 @@
     # Apps
     atlauncher
     obsidian
-		spotify
+    spotify
     postman
     firefox
     neovim
