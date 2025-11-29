@@ -18,7 +18,7 @@
         44100
         48000
       ];
-      "default.clock.quantum" = 64;
+      "default.clock.quantum" = 128;
       "default.clock.min-quantum" = 32;
       "default.clock.max-quantum" = 256;
       "default.clock.quantum-limit" = 256;
@@ -37,9 +37,7 @@
         actions = {
           update-props = {
             "session.suspend-timeout-seconds" = 0;
-            "node.pause-on-idle" = false;
             "device.profile" = "pro-audio";
-            "api.alsa.period-size" = 32;
           };
         };
       }
