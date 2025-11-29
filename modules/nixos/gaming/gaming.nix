@@ -27,4 +27,12 @@
       proton-ge-bin
     ];
   };
+
+  # Game Streaming Host
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 }
