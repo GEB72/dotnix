@@ -34,5 +34,18 @@
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;
+    applications.apps = [
+      {
+        name = "Steam Deck Mode";
+        prep-cmd = [
+          {
+            do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.1280x800@90";
+            undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.3840x2160@239.99";
+          }
+        ];
+        exclude-global-prep-cmd = "false";
+        auto-detach = "true";
+      }
+    ];
   };
 }
