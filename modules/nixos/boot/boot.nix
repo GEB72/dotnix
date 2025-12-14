@@ -9,6 +9,4 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Disable SMT
-  security.allowSimultaneousMultithreading = false;
 }

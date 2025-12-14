@@ -48,7 +48,5 @@
   musnix = {
     enable = true;
     alsaSeq.enable = true;
-    rtcqs.enable = true;
-    rtirq.enable = true;
   };
 }

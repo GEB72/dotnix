@@ -34,18 +34,35 @@
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;
-    applications.apps = [
-      {
-        name = "Steam Deck Mode";
-        prep-cmd = [
-          {
-            do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.1280x800@90";
-            undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.3840x2160@239.99";
-          }
-        ];
-        exclude-global-prep-cmd = "false";
-        auto-detach = "true";
-      }
-    ];
+    applications = {
+      "env" = {
+        PATH = "$(PATH):$(HOME)/.local/bin";
+      };
+      apps = [
+        {
+          name = "Desktop Monitor";
+          prep-cmd = [
+            {
+              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.1920x1200@240";
+              undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.3840x2160@240";
+            }
+          ];
+          exclude-global-prep-cmd = "false";
+          auto-detach = "true";
+        }
+        {
+          name = "Dummy HDMI";
+          prep-cmd = [
+            {
+              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.disable output.HDMI-A-1.enable output.HDMI-A-1.primary output.HDMI-A-1.mode.1920x1200@120";
+              undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.enable output.HDMI-A-1.disable output.DP-1.primary output.HDMI-A-1.mode.3840x2160@120";
+            }
+          ];
+          exclude-global-prep-cmd = "false";
+          auto-detach = "true";
+        }
+      ];
+    };
   };
+
 }
