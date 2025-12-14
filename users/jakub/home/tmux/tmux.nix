@@ -8,25 +8,26 @@
       vim-tmux-navigator
     ];
     extraConfig = ''
-      set -g status-style bg=18,fg=black
+            set -g status-style "bg=#0a0c10,fg=#75c8ff"
+      			set -g pane-active-border-style "bg=default,fg=#47afff"
 
-      set -g @vim_navigator_mapping_left "C-h"
-      set -g @vim_navigator_mapping_right "C-l"
-      set -g @vim_navigator_mapping_up "C-k"
-      set -g @vim_navigator_mapping_down "C-j"
-      set -g @vim_navigator_mapping_prev "C-//"
+            set -g @vim_navigator_mapping_left "C-h"
+            set -g @vim_navigator_mapping_right "C-l"
+            set -g @vim_navigator_mapping_up "C-k"
+            set -g @vim_navigator_mapping_down "C-j"
+            set -g @vim_navigator_mapping_prev "C-//"
 
-      resurrect_dir="$HOME/.tmux/resurrect"
-      set -g @resurrect-strategy-vim 'session'
-      set -g @resurrect-strategy-nvim 'session'
-      set -g @resurrect-capture-pane-contents 'on'
-      set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
-      set -g @resurrect-processes '"~nvim"'
+            resurrect_dir="$HOME/.tmux/resurrect"
+            set -g @resurrect-strategy-vim 'session'
+            set -g @resurrect-strategy-nvim 'session'
+            set -g @resurrect-capture-pane-contents 'on'
+            set -g @resurrect-hook-post-save-all "sed 's/--cmd[^ ]* [^ ]* [^ ]*//g' $resurrect_dir/last | sponge $resurrect_dir/last"
+            set -g @resurrect-processes '"~nvim"'
 
-      set -g @continuum-restore 'on'
-      set -g @continuum-boot 'on'
-      set -g @continuum-boot-options 'kitty'
-      set -g @continuum-save-interval '10'
+            set -g @continuum-restore 'on'
+            set -g @continuum-boot 'on'
+            set -g @continuum-boot-options 'kitty'
+            set -g @continuum-save-interval '10'
     '';
   };
 
