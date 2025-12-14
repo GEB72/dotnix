@@ -4,11 +4,11 @@
 spawn tmux 
 
 # delay with sleep to compensate for tmux starting time
-sleep 2
+sleep 1
 
 # run restore script directly
 send "\002\022"
 
-# long wait until tmux restore is complete
+# wait until tmux restore is complete
 # (things get messed up if expect client isn't attached)
-sleep 100
+sleep 1 

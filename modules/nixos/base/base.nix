@@ -15,9 +15,6 @@
   # Disable mutable users
   users.mutableUsers = false;
 
-  # Tiling Manager
-  programs.hyprland.enable = true;
-
   # Plasma 6 for gaming
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -30,4 +27,10 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.promptInit =
     "source ${pkgs.zsh-powerlevel10k}" + "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+
+  # Increase sudo time
+  security.sudo.extraConfig = ''
+    	Defaults timestamp_timeout=300
+    	Defaults timestamp_type=global
+  '';
 }

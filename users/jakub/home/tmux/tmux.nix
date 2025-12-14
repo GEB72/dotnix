@@ -8,6 +8,8 @@
       vim-tmux-navigator
     ];
     extraConfig = ''
+      set -g status-style bg=18,fg=black
+
       set -g @vim_navigator_mapping_left "C-h"
       set -g @vim_navigator_mapping_right "C-l"
       set -g @vim_navigator_mapping_up "C-k"
