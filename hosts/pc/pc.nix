@@ -25,7 +25,10 @@
 
   # OC Tool
   systemd.packages = with pkgs; [ lact ];
-  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
+  boot.kernelParams = [
+    "amdgpu.ppfeaturemask=0xffffffff"
+    "drm.edid_firmware=DP-2:edid/custom1.bin"
+  ];
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
     after = [ "multi-user.target" ];
@@ -34,6 +37,25 @@
       ExecStart = "${pkgs.lact}/bin/lact daemon";
     };
     enable = true;
+  };
+
+  # Export Custom EDIDs
+  hardware.display.edid = {
+    enable = true;
+    packages = [
+      (pkgs.runCommand "edid-custom" { } ''
+        mkdir -p "$out/lib/firmware/edid"
+        base64 -d > "$out/lib/firmware/edid/custom1.bin" <<'EOF'
+        AP///////wAQrEaiU0kzMB4iAQS1Rih4OwMhr04+tSUNUFSlSwBxT4GAqcDRwAEBAQEBAQEBTdAA
+        oPBwPoAwIDUAu4shAAAaAAAA/wAzUTc1WVozCiAgICAgAAAA/ABBVzMyMjVRRgogICAgAAAA/Qww
+        8P//6gEKICAgICAgAuwCAyWxUnZhYF9eXT8iISAfExIQBAMCAeMFwwHmBgUBik8C4gDqAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPXASeQMAAwFkX+QABH8HswA/gD8ANwRPAAIABABu
+        wgAE/wmfAC+AHwCfBVQAAgAEAMqcAQT/CZ8AL4AfAJ8FsgACAAQA1o4DBP8OnwAvgB8AbwgMAQIA
+        BABVXgAE/wmfAC+AHwCfBSgAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAKyQ
+        EOF
+      '')
+    ];
   };
 
   # Bluetooth
