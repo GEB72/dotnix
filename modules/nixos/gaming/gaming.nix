@@ -43,7 +43,7 @@
           name = "Desktop Monitor";
           prep-cmd = [
             {
-              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.1920x1200@240";
+              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.2560x1600@240";
               undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.mode.3840x2160@240";
             }
           ];
@@ -51,11 +51,11 @@
           auto-detach = "true";
         }
         {
-          name = "Dummy HDMI";
+          name = "Dummy DP-HDMI";
           prep-cmd = [
             {
-              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.disable output.HDMI-A-1.enable output.HDMI-A-1.primary output.HDMI-A-1.mode.1920x1200@120";
-              undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.enable output.HDMI-A-1.disable output.DP-1.primary output.HDMI-A-1.mode.3840x2160@120";
+              do = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.disable output.DP-2.enable";
+              undo = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.DP-1.enable output.DP-2.disable";
             }
           ];
           exclude-global-prep-cmd = "false";
