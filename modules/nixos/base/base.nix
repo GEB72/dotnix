@@ -19,6 +19,12 @@
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
+  # Virtualisation
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "jakub" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   # bash
   programs.bash.enable = true;
 

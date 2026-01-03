@@ -28,7 +28,7 @@
   boot.kernelParams = [
     "amdgpu.ppfeaturemask=0xffffffff"
     "drm.edid_firmware=DP-2:edid/custom1.bin"
-		"video=DP-2:2560x1600@90"
+    "video=DP-2:2560x1600@90"
   ];
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";

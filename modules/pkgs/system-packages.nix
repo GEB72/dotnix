@@ -7,7 +7,6 @@
     moreutils
     ripgrep
     expect
-    evtest
     bottom
     p7zip
     tree
@@ -20,10 +19,13 @@
     git
     jq
 
+    # Production/VST
+    bitwig-studio
+    vital
+
     # Audio/Bluetooth
     pavucontrol
     easyeffects
-    ardour
     bluez
 
     # Language
@@ -52,7 +54,6 @@
     zsh-powerlevel10k
     oh-my-zsh
     fastfetch
-    wlsunset
     nwg-look
 
     # Apps
@@ -63,14 +64,12 @@
     firefox
     neovim
     heroic
-    rofi
     yazi
     vial
     mpv
 
     # Desktop
     wl-clipboard
-    hyprpaper
     waybar
     clipse
     slurp
