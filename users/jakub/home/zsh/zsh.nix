@@ -23,9 +23,7 @@
     initContent = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       test -f ~/.p10k.zsh && source ~/.p10k.zsh
-      if [ -z "$TMUX" ] && ! [pgrep -x "tmuxr" > /dev/null] && \
-      	 [$pgrep -x -f "startplasma-wayland" > /dev/null] && \
-      	 [$(ps -o comm= -p $PPID) == dolphin]
+      if [ -z "$TMUX" ] && ! pgrep -x "tmuxr" > /dev/null && [[ $TERM == "xterm-kitty" ]]
       then
       	tmux a || (tmuxr && tmux a)
       fi
