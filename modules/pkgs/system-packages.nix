@@ -7,17 +7,19 @@
     moreutils
     ripgrep
     expect
-    bottom
     p7zip
     tree
     wget
     stow
     sops
-    lact
     wine
     age
     git
     jq
+
+    # Hardware
+    lact
+    gparted
 
     # Production/VST
     bitwig-studio
@@ -29,6 +31,8 @@
     bluez
 
     # Language
+		python314Packages.west
+		python3
     rustc
     gcc
     go
@@ -39,6 +43,7 @@
 
     # Terminal
     lazygit
+    bottom
     kitty
 
     # LSP
@@ -57,6 +62,7 @@
     nwg-look
 
     # Apps
+    qbittorrent
     atlauncher
     obsidian
     spotify

@@ -1,4 +1,4 @@
-{ self, ... }:
+{ config, self, ... }:
 {
   services.udev.extraRules =
     # Vial udev rules
@@ -14,4 +14,15 @@
     enable = true;
     keyboards."kb".configFile = "${self}/modules/nixos/keyboard/kanata.kbd";
   };
+
+	# Github Runner for Toucan Compilation
+	services.github-runners = {
+    runner = {
+      enable = true;
+      name = "runner";
+      tokenFile = config.sops.secrets."actions/build-toucan-token".path;
+      url = "https://github.com/GEB72/zmk-keyboard-toucan";
+    };
+	};
+
 }

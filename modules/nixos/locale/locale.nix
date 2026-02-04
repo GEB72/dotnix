@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -18,12 +18,4 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Configure x11 Keymap
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
-
-  # Configure Console Keymap
-  console.keyMap = "uk";
 }

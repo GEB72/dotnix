@@ -15,9 +15,12 @@
   # Disable mutable users
   users.mutableUsers = false;
 
-  # Plasma 6 for gaming
+  # Plasma 6
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  environment.systemPackages = with pkgs; [
+    kdePackages.filelight
+  ];
 
   # Virtualisation
   programs.virt-manager.enable = true;
