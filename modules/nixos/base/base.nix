@@ -14,7 +14,10 @@
 
   # Disable mutable users
   users.mutableUsers = false;
-
+  
+  # Default editor
+  programs.neovim.defaultEditor = true;
+  
   # Plasma 6
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
