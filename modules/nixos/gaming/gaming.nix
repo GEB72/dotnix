@@ -30,6 +30,9 @@
 
   # Game Streaming Host
   services.sunshine = {
+    package = pkgs.sunshine.override {
+      boost = pkgs.boost187;
+    };
     enable = true;
     autoStart = true;
     capSysAdmin = true;
