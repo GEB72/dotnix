@@ -29,7 +29,8 @@
   ];
   nixpkgs.overlays = [
     (self: super: {
-      linuxPackagesLatest = super.linuxPackages_latest.extend (ksuper: kernel : ksuper.kernel.override {
+      linuxPackagesLatest = super.linuxPackages_latest.extend 
+      (ksuper: kernel : ksuper.kernel.override {
         extraMakeFlags = [
           "KCFLAGS+=-DAMD_PRIVATE_COLOR"
         ];
