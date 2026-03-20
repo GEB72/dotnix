@@ -22,14 +22,23 @@
     enable = true;
     enable32Bit = true;
   };
-
-  # OC Tool
-  systemd.packages = with pkgs; [ lact ];
   boot.kernelParams = [
     "amdgpu.ppfeaturemask=0xffffffff"
     "drm.edid_firmware=DP-2:edid/custom1.bin"
     "video=DP-2:2560x1600@90"
   ];
+  nixpkgs.overlays = [
+    (self: super: {
+      linuxPackagesLatest = super.linuxPackages_latest.extend (ksuper: kernel : ksuper.kernel.override {
+        extraMakeFlags = [
+          "KCFLAGS+=-DAMD_PRIVATE_COLOR"
+        ];
+      });
+    })
+  ];
+
+  # OC Tool
+  systemd.packages = with pkgs; [ lact ];
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
     after = [ "multi-user.target" ];
