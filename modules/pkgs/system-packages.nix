@@ -8,6 +8,7 @@
     ripgrep
     expect
     p7zip
+    unrar
     tree
     wget
     stow
@@ -29,8 +30,10 @@
     pavucontrol
     easyeffects
     bluez
+    mixxx
 
     # Language
+    javaPackages.compiler.openjdk25
 		python314Packages.west
 		python3
     rustc
