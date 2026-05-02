@@ -20,7 +20,6 @@
 
     # Hardware
     lact
-    gparted
 
     # Production/VST
     bitwig-studio
@@ -34,9 +33,6 @@
 
     # Language
     javaPackages.compiler.openjdk25
-		python314Packages.west
-		python3
-    rustc
     gcc
     go
 
@@ -69,17 +65,13 @@
     atlauncher
     obsidian
     spotify
-    postman
     firefox
     neovim
-    heroic
     yazi
-    vial
     mpv
 
     # Desktop
     wl-clipboard
-    waybar
     clipse
     slurp
     grim
