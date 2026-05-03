@@ -22,8 +22,8 @@
     lact
 
     # Production/VST
-    bitwig-studio
-    vital
+    #bitwig-studio
+    #vital
 
     # Audio/Bluetooth
     pavucontrol
