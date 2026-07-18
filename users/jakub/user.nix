@@ -30,6 +30,7 @@
       "networkmanager"
       "wheel"
       "audio"
+      "docker"
     ];
 
     openssh.authorizedKeys.keys = [

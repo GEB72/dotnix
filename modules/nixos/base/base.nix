@@ -30,6 +30,7 @@
   users.groups.libvirtd.members = [ "jakub" ];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.docker.enable = true;
 
   # bash
   programs.bash.enable = true;
