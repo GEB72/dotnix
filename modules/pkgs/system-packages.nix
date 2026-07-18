@@ -31,7 +31,7 @@
     bluez
     mixxx
 
-    # Language
+    # Language/Dev
     javaPackages.compiler.openjdk25
     gcc
     go
