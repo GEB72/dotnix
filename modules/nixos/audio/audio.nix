@@ -13,7 +13,7 @@
   # Adjust latency
   services.pipewire.extraConfig.pipewire."92-low-latency" = {
     "context.properties" = {
-      "default.clock.rate" = 48000;
+      "default.clock.rate" = 44100;
       "default.allowed-rates" = [
         44100
         48000
