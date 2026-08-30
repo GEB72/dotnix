@@ -14,10 +14,6 @@
         owner = config.users.users.jakub.name;
         inherit (config.users.users.jakub) group;
       };
-
-			"actions/build-toucan-token" = {
-        sopsFile = ./../../secrets/secret.yaml;
-			};
     };
   };
 
