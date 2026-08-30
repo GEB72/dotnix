@@ -46,6 +46,9 @@
     	Defaults timestamp_timeout=300
     	Defaults timestamp_type=global
   '';
+  
+  # Nix Link Loader for dynamically linked executables
+  programs.nix-ld.enable = true;
 
   # Binary Cache Subsituters
   nix = {
