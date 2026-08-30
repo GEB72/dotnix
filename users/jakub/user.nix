@@ -14,6 +14,13 @@
         owner = config.users.users.jakub.name;
         inherit (config.users.users.jakub) group;
       };
+
+      "jakub/rss-password" = {
+        sopsFile = ./../../secrets/users.yaml;
+        path = "/etc/secrets/freshrss";
+        owner = config.services.freshrss.user;
+        group = "freshrss";
+      };
     };
   };
 

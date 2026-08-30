@@ -4,11 +4,29 @@
   services.freshrss = {
     enable = true;
     api.enable = true;
-    virtualHost = "freshrss.jakub.com";
-    baseUrl = "https://freshrss.jakub.com";
     webserver = "nginx";
+    virtualHost = "jakub.rss.com";
+    baseUrl = "http://jakub.rss.com";
     defaultUser = "jakub";
-    passwordFile = "/etc/secrets/freshrss";
+    passwordFile = config.sops.secrets."jakub/rss-password".path;
+  };
+
+  # RSS Database
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "freshrss" ];
+    ensureUsers = [
+      {
+        name = "freshrss";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
+
+  # DNS
+  networking.hosts = {
+    "127.0.0.1" = [ "jakub.rss.com" ];
+    "::1" = [ "jakub.rss.com" ];
   };
 
 }
