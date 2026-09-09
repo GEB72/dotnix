@@ -1,6 +1,7 @@
 ;; --- Define Global Config ---
 (defcfg 
-  linux-dev /dev/keyboard
+  linux-dev-names-include "ASUSTeK ROG OMNI RECEIVER Keyboard"
+  linux-continue-if-no-devs-found yes
 	process-unmapped-keys no 
   concurrent-tap-hold yes
 )
