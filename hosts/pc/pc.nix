@@ -69,6 +69,13 @@
     ];
   };
 
+  # DuckDNS
+  services.duckdns = {
+    enable = true;
+    domains = [ "jakub-pc" ];
+    tokenFile = config.sops.secrets."pc/duckdns-token".path;
+  };
+
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;

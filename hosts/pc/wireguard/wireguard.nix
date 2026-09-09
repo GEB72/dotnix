@@ -1,14 +1,5 @@
 { config, ... }:
 {
-  sops.secrets = {
-    "pc/wireguard-key" = {
-      group = config.users.users.systemd-network.group;
-      sopsFile = ./../../../secrets/hosts.yaml;
-      reloadUnits = [ "systemd-networkd.service" ];
-      mode = "0640";
-    };
-  };
-
   networking.wireguard = {
     enable = true;
 

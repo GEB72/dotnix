@@ -21,6 +21,18 @@
         owner = config.services.freshrss.user;
         group = "freshrss";
       };
+
+      "pc/wireguard-key" = {
+        sopsFile = ./../../secrets/hosts.yaml;
+        group = config.users.users.systemd-network.group;
+        reloadUnits = [ "systemd-networkd.service" ];
+        mode = "0640";
+      };
+
+      "pc/duckdns-token" = {
+        sopsFile = ./../../secrets/hosts.yaml;
+        mode = "0400";
+      };
     };
   };
 
