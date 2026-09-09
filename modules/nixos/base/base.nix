@@ -43,7 +43,7 @@
 
   # Increase sudo time
   security.sudo.extraConfig = ''
-    	Defaults timestamp_timeout=300
+    	Defaults timestamp_timeout=30
     	Defaults timestamp_type=global
   '';
   
