@@ -17,7 +17,7 @@
   hardware.enableRedistributableFirmware = true;
 
   # Graphics Card
-  services.xserver.videoDrivers = [ "amd" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
