@@ -26,10 +26,8 @@
         peers = [
           {
             # Steam Deck
-            # Replace with the actual public key from the Deck after running:
-            #   wg genkey | tee privatekey | wg pubkey > publickey
-            publicKey = "REPLACE_WITH_STEAMDECK_PUBLIC_KEY";
-            allowedIPs = [ "10.0.0.2/32" ];
+            publicKey = "2URgjtEvjnkV/BuFC1Jl6Pe0IIUoOcezmapQpiuNTV0=";
+            allowedIPs = [ "10.0.0.2/32" ]
           }
         ];
       };
