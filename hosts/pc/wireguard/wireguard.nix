@@ -27,7 +27,7 @@
           {
             # Steam Deck
             publicKey = "2URgjtEvjnkV/BuFC1Jl6Pe0IIUoOcezmapQpiuNTV0=";
-            allowedIPs = [ "10.0.0.2/32" ]
+            allowedIPs = [ "10.0.0.2/32" ];
           }
         ];
       };
