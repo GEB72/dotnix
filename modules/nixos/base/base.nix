@@ -46,6 +46,11 @@
     	Defaults timestamp_timeout=30
     	Defaults timestamp_type=global
   '';
+
+  # Decrease timeout before SIGKILL
+  systemd.user.settings.Manager = {
+    DefaultTimeoutStopSec = 5;
+  };
   
   # Nix Link Loader for dynamically linked executables
   programs.nix-ld.enable = true;
