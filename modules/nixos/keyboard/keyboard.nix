@@ -11,7 +11,6 @@
     enable = true;
     keyboards."kb" = {
       configFile = "${self}/modules/nixos/keyboard/kanata.kbd";
-      extraArgs = [ "--wait-device-ms" "3000" ];
     };
   };
 
