@@ -5,6 +5,7 @@
     enable = true;
     startWhenNeeded = true;
     ports = [ 22 ];
+    openFirewall = false;
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";
