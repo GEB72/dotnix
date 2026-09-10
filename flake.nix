@@ -6,6 +6,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     musnix.url = "github:musnix/musnix";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -24,6 +26,7 @@
       sops-nix,
       home-manager,
       musnix,
+      nixvim,
     }:
     {
 
@@ -37,6 +40,7 @@
           modules = [
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
+            { home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ]; }
             musnix.nixosModules.musnix
             ./users/jakub/user.nix
             ./modules/modules.nix
@@ -49,6 +53,7 @@
           modules = [
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
+            { home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ]; }
             ./users/jakub/user.nix
             ./modules/modules.nix
             ./hosts/laptop/laptop.nix

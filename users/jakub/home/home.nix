@@ -20,5 +20,6 @@
   imports = [
     ./tmux/tmux.nix
     ./zsh/zsh.nix
+    ./nixvim/nixvim.nix
   ];
 }
