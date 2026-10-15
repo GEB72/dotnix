@@ -28,6 +28,7 @@
     # Audio/Bluetooth
     pavucontrol
     easyeffects
+    audacious
     bluez
     mixxx
 
