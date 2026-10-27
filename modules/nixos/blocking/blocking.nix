@@ -5,54 +5,52 @@
     enable = true;
     settings = {
       ports.dns = 53;
-
       upstreams.groups.default = [
         "https://dns.cloudflare.com/dns-query"
         "https://dns.google/dns-query"
       ];
-
-      # Define block groups — fill in domains per category
       blocking = {
         denylists = {
           social = [
-            # "reddit.com"
-            # "twitter.com"
-            # "instagram.com"
+            "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+            ''
+              reddit.com
+              instagram.com
+            ''
           ];
           video = [
             # "youtube.com"
             # "twitch.tv"
             # "tiktok.com"
           ];
-          news = [
-            # "news.ycombinator.com"
-            # "bbc.co.uk"
-          ];
         };
 
         clientGroupsBlock.default = [
           "social"
           "video"
-          "news"
         ];
+
+        schedules = {
+          wind-down = {
+            weekdays = ["mon" "tue" "wed" "thu" "fri"];
+            start = "23:00";
+            end = "02:00";
+          };
+          sleep = {
+            weekdays = ["mon" "tue" "wed" "thu" "fri"];
+            start = "02:00";
+            end = "07:00";
+          };
+        };
+        listSchedules = {
+          social = ["wind-down" "sleep"];
+        };
 
         blockType = "zeroIp";
       };
 
-      # Schedule overrides — unblock groups during allowed windows
-      # See: https://0xerr0r.github.io/blocky/latest/configuration/#schedule
-      #
-      # blocking.schedule = {
-      #   groups.social = {
-      #     weekdays = "8-18";
-      #   };
-      # };
     };
   };
-
-  # Point system DNS to blocky
-  networking.nameservers = [ "127.0.0.1" ];
-  services.resolved.enable = false;
 
   # App blocking — kill running apps and hide .desktop files on schedule
   # Apps can still be launched via CLI, but vanish from the app launcher
