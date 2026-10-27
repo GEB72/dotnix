@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  mkBlocklist = name: domains:
+    toString (pkgs.writeText "blocklist-${name}" (lib.concatStringsSep "\n" domains));
+in
 {
-  # DNS-based website blocking with schedules
   services.blocky = {
     enable = true;
     settings = {
@@ -13,15 +16,17 @@
         denylists = {
           social = [
             "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-            ''
-              reddit.com
-              instagram.com
-            ''
+            (mkBlocklist "social" [
+              "reddit.com"
+              "instagram.com"
+            ])
           ];
           video = [
-            # "youtube.com"
-            # "twitch.tv"
-            # "tiktok.com"
+            # (mkBlocklist "video" [
+            #   "youtube.com"
+            #   "twitch.tv"
+            #   "tiktok.com"
+            # ])
           ];
         };
 
@@ -32,28 +37,29 @@
 
         schedules = {
           wind-down = {
-            weekdays = ["mon" "tue" "wed" "thu" "fri"];
+            weekdays = [ "mon" "tue" "wed" "thu" "fri" ];
             start = "23:00";
             end = "02:00";
           };
           sleep = {
-            weekdays = ["mon" "tue" "wed" "thu" "fri"];
+            weekdays = [ "mon" "tue" "wed" "thu" "fri" ];
             start = "02:00";
             end = "07:00";
           };
         };
         listSchedules = {
-          social = ["wind-down" "sleep"];
+          social = [ "wind-down" "sleep" ];
         };
 
         blockType = "zeroIp";
       };
-
     };
   };
 
+  networking.nameservers = [ "127.0.0.1" ];
+  services.resolved.enable = false;
+
   # App blocking — kill running apps and hide .desktop files on schedule
-  # Apps can still be launched via CLI, but vanish from the app launcher
   # Uncomment and adjust the lists and timers below
 
   # systemd.services.app-blocker = {
