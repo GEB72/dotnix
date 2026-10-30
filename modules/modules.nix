@@ -10,7 +10,6 @@
     ./nixos/audio/audio.nix
     ./nixos/gaming/gaming.nix
     ./nixos/music/music.nix
-    ./nixos/blocking/blocking.nix
     ./nixos/keyboard/keyboard.nix
     ./pkgs/system-packages.nix
   ];
